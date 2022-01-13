@@ -623,7 +623,7 @@ func (p Page) GetTextByColumn() (Columns, error) {
 	p.walkTextBlocks(showText)
 
 	for _, column := range result {
-		sort.Sort(column.Content)
+		sort.Stable(column.Content)
 	}
 
 	sort.Slice(result, func(i, j int) bool {
