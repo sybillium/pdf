@@ -697,7 +697,7 @@ func (p Page) GetTextByRow() (Rows, error) {
 	p.walkTextBlocks(showText)
 
 	for _, row := range result {
-		sort.Sort(row.Content)
+		sort.Stable(row.Content)
 	}
 
 	sort.Slice(result, func(i, j int) bool {
